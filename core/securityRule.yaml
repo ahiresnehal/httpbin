@@ -47,7 +47,7 @@ items:
     process_profile:
       baseline: zero-drift
     target:
-      policymode: Discover
+      policymode: Monitor
       selector:
         comment: ""
         criteria:

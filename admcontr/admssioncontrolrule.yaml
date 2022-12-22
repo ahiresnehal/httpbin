@@ -6,7 +6,7 @@ spec:
   config:
     client_mode: service
     enable: true
-    mode: Protect
+    mode: protect
   rules:
   - action: deny
     criteria:

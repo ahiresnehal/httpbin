@@ -3,7 +3,7 @@ items:
 - apiVersion: neuvector.com/v1
   kind: NvSecurityRule
   metadata:
-    name: nv.httpbin.default
+    name: nv.httpbin.default   #conatiner
     namespace: default
   spec:
     dlp:
@@ -11,27 +11,27 @@ items:
       status: true
     egress: []
     file: []
-    ingress:
+    ingress:                    #network rules
     - action: allow
       applications:
       - HTTP
-      name: nv.httpbin.default-ingress-0
+      name: nv.httpbin.default-ingress-0                #to
       ports: any
       priority: 0
       selector:
         comment: ""
         criteria: []
-        name: nodes
+        name: nodes                     #from 
         original_name: ""
     process:
     - action: allow
       allow_update: false
-      name: dash
+      name: dash                     #to
       path: /bin/dash
     - action: allow
       allow_update: false
       name: gunicorn
-      path: /usr/bin/python3.6
+      path: /usr/bin/python3.6         #from 
     - action: allow
       allow_update: false
       name: ldconfig.real
@@ -47,7 +47,7 @@ items:
     process_profile:
       baseline: zero-drift
     target:
-      policymode: Monitor
+      policymode: Monitor      #change any
       selector:
         comment: ""
         criteria:

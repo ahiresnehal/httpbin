@@ -6,10 +6,10 @@ spec:
   config:
     client_mode: service      #coming services like deployment or image scanning related
     enable: true
-    mode: protect              #there can be two modes protect and monitor
+    mode: monitor              #there can be two modes protect and monitor
   rules:
   - action: deny              #allow or deny
     criteria:
-    - name: cveHighWithFixCount     #if that application container high severity wit fixed count so need to deny that request 
+    - name: cveHighWithFixCount     #if that application container contains high severity wit fixed count so need to deny that request 
       op: '>='
       value: "12"

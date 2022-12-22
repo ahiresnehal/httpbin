@@ -4,12 +4,12 @@ metadata:
   name: local
 spec:
   config:
-    client_mode: service
+    client_mode: service      #coming services like deployment or image scanning related
     enable: true
-    mode: protect
+    mode: protect              #there can be two modes protect and monitor
   rules:
-  - action: deny
+  - action: deny              #allow or deny
     criteria:
-    - name: cveHighWithFixCount
+    - name: cveHighWithFixCount     #if that application container high severity wit fixed count so need to deny that request 
       op: '>='
       value: "12"
